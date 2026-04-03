@@ -1,4 +1,4 @@
-# Finance Dashboard — Backend
+# Finance Dashboard Backend
 
 A production-structured REST API for a multi-role finance dashboard. Built with **Node.js + Express + SQLite**.
 
@@ -11,7 +11,7 @@ npm install
 
 # 2. Configure environment
 cp .env.example .env
-# Defaults work out of the box — no edits needed for local dev
+# Defaults work out of the box no edits needed for local dev
 
 # 3. Seed demo users + 60 sample records
 npm run seed
@@ -183,7 +183,7 @@ All aggregation logic lives in `dashboardService.js` using SQLite's date functio
 }
 ```
 
-The viewer/analyst split is enforced here: viewers only see totals and recent activity; analysts and admins get the full category and trend data.
+The viewer/analyst split is enforced here: viewers only see totals and recent activity analysts and admins get the full category and trend data.
 
 ---
 
@@ -481,7 +481,7 @@ Error:
 
 | Tradeoff | Detail |
 |----------|--------|
-| No rate limiting | `express-rate-limit` would be added before production. The `/api/auth/resend-verification` endpoint is the most exposure risk. |
-| No refresh tokens | 24h JWT lifetime is a simplification. A production system would implement short-lived access tokens + long-lived refresh tokens. |
-| SQLite concurrency | SQLite handles multiple concurrent readers well in WAL mode but serialises writers. A busy production service would switch to PostgreSQL. |
-| Passwords in seed | Demo passwords are short and readable. Production seeding would use a secrets manager or an interactive prompt. |
+| No rate limiting | `express-rate-limit` would be added before production. The `/api/auth/resend-verification` endpoint is the most exposure risk. 
+| No refresh tokens | 24h JWT lifetime is a simplification. A production system would implement short-lived access tokens + long-lived refresh tokens. 
+| SQLite concurrency | SQLite handles multiple concurrent readers well in WAL mode but serialises writers. A busy production service would switch to PostgreSQL. 
+| Passwords in seed | Demo passwords are short and readable. Production seeding would use a secrets manager or an interactive prompt. 
